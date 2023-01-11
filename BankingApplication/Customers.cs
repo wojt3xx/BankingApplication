@@ -73,5 +73,12 @@ namespace BankingApplication
         {
             return moneyAmount += amount;
         }
+
+        public int RemoveMoney(int amount)
+        {
+            return moneyAmount -= amount;
+
+            // need to add if for checking positive amount
+        }
     }
 }

@@ -93,7 +93,7 @@ namespace BankingApplication
             Console.WriteLine("Listing all the customers");
             for (int i = 1; i <= customers.Count; i++)
             {
-                Console.Write($"Customer number: {i - 1}");
+                Console.WriteLine($"Customer number: {i - 1}");
                 Console.WriteLine($"First name: {customers[i - 1].FirstName}");
                 Console.WriteLine($"Last name:  {customers[i - 1].LastName}");
                 Console.WriteLine($"Email:  {customers[i - 1].Email}");
@@ -105,17 +105,44 @@ namespace BankingApplication
 
         private static void ListCustomerDetails()
         {
+            Console.WriteLine("Listing customer details");
+            Console.WriteLine("Enter the customer number: ");
+            int customerNumber = int.Parse(Console.ReadLine());
 
+            Console.WriteLine($"First name: {customers[customerNumber-1].FirstName}");
+            Console.WriteLine($"Last name: {customers[customerNumber - 1].LastName}");
+            Console.WriteLine($"Email: {customers[customerNumber - 1].Email}");
+            Console.WriteLine($"Phone number: {customers[customerNumber - 1].PhoneNumber}");
+            Console.WriteLine($"Money amount: {customers[customerNumber - 1].MoneyAmount}");
         }
 
         private static void AddFunds()
         {
+            Console.WriteLine("Adding funds for customer");
+            Console.WriteLine("Enter the customer number: ");
+            int customerNumber = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("How much money you want to add? ");
+            int moneyAmountToAdd = int.Parse(Console.ReadLine());
+
+            customers[customerNumber - 1].AddMoney(moneyAmountToAdd);
+
+            Console.WriteLine($"${moneyAmountToAdd} has been added to {customers[customerNumber - 1].FirstName} {customers[customerNumber - 1].LastName} account");
+            Console.WriteLine($"Current balance is ${customers[customerNumber - 1].MoneyAmount}");
         }
 
         private static void RemoveFunds()
         {
+            Console.WriteLine("Removing funds for customer");
+            Console.WriteLine("Enter the customer number: ");
+            int customerNumber = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("How much money you want to remove? ");
+            int moneyAmountToRemove = int.Parse(Console.ReadLine());
+
+            customers[customerNumber - 1].RemoveMoney(moneyAmountToRemove);
+            Console.WriteLine($"${moneyAmountToRemove} has been removed from {customers[customerNumber - 1].FirstName} {customers[customerNumber - 1].LastName} account");
+            Console.WriteLine($"Current balance is ${customers[customerNumber - 1].MoneyAmount}");
         }
     }
 }
