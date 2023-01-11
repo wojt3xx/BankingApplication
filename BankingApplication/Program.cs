@@ -109,7 +109,7 @@ namespace BankingApplication
             Console.WriteLine("Enter the customer number: ");
             int customerNumber = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"First name: {customers[customerNumber-1].FirstName}");
+            Console.WriteLine($"First name: {customers[customerNumber - 1].FirstName}");
             Console.WriteLine($"Last name: {customers[customerNumber - 1].LastName}");
             Console.WriteLine($"Email: {customers[customerNumber - 1].Email}");
             Console.WriteLine($"Phone number: {customers[customerNumber - 1].PhoneNumber}");
